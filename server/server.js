@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
-const compression = require('compression');
+// const compression = require('compression');
 const GPU = require('../database/models/GPU');
 
 const app = express();
-app.use(compression());
+// app.use(compression());
 const PORT = 1313;
 const PUBLIC_DIR = path.resolve(__dirname, 'public');
 
@@ -20,7 +20,7 @@ app.use(express.static(PUBLIC_DIR));
 
 app.get('/api/GPUs/', (req, res) => {
   const cryptoId = req.params;
-  GPU.find(cryptoId)
+  GPU.find()
     .then((data) => {
       console.log(data);
       res.status(200).send(data);
