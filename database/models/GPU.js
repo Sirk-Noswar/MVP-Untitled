@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 // eslint-disable-next-line no-unused-vars
-const db = require('./index.js');
+const db = require('../index.js');
 
 mongoose.Promise = global.Promise;
 
-const cryptoSchema = new mongoose.Schema({
+const GPUSchema = new mongoose.Schema({
 
   cardId: { type: Number, index: true, unique: true },
   brand: String,
@@ -40,12 +40,13 @@ const cryptoSchema = new mongoose.Schema({
     retail: Number,
     custom: Number,
   },
-  SLI: {
+  NVLink: {
     has: Boolean,
     type: String,
   },
+  ReleasePrice: Number,
 });
 
-const Crypto = mongoose.model('Crypto', cryptoSchema);
+const GPU = mongoose.model('GPU', GPUSchema);
 
-module.exports = Crypto;
+module.exports = GPU;

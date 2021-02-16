@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
-const Crypto = require('../database/crypto');
+const GPU = require('../database/models/GPU');
 
 const app = express();
 app.use(compression());
@@ -18,9 +18,9 @@ app.use((req, res, next) => {
 
 app.use(express.static(PUBLIC_DIR));
 
-app.get('/api/crypto/', (req, res) => {
+app.get('/api/GPUs/', (req, res) => {
   const cryptoId = req.params;
-  Crypto.find(cryptoId)
+  GPU.find(cryptoId)
     .then((data) => {
       console.log(data);
       res.status(200).send(data);

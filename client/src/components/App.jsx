@@ -7,6 +7,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       crypto: [],
+      GPUs: [],
     };
     this.getCrypto = this.getCrypto.bind(this);
   }
@@ -15,10 +16,10 @@ class App extends React.Component {
     this.getCrypto();
   }
 
-  getCrypto() {
-    axios.get('/api/crypto')
+  getGPUs() {
+    axios.get('/api/GPUs')
       .then(({ data }) => {
-        this.setState({ crypto: data });
+        this.setState({ GPUs: data });
       })
       .catch((err) => {
         return err;
@@ -26,7 +27,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { crypto } = this.state;
+    const { GPUs } = this.state;
     return (
       <div>
         If you can see this, React is working.
