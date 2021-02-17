@@ -108,3 +108,5 @@ bundle.*
 
 # Secure
 .secure.*
+
+.DS_Store

@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const mongoUri = 'mongodb://database/crypto';
+mongoose.Promise = global.Promise;
+
+const mongoUri = 'mongodb://localhost/crypto';
 
 const db = mongoose.connect(mongoUri, {
   useNewUrlParser: true,
