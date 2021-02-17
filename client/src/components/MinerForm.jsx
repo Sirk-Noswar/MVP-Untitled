@@ -38,7 +38,7 @@ class MinerForm extends React.Component {
       nv3090Select: false,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
+    // this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleChange (e) {
@@ -49,11 +49,11 @@ class MinerForm extends React.Component {
     });
   }
 
-  handleToggle(e) {
-    this.setState({
-      [e.target.name]: e.target.checked,
-    })
-  }
+  // handleToggle(e) {
+  //   this.setState({
+  //     [e.target.name]: e.target.checked,
+  //   })
+  // }
 
   render() {
     const { nv1050, nv1050Select, nv1050ti, nv1050tiSelect, nv1060, nv1060Select, nv1070, nv1070Select, nv1070ti, nv1070tiSelect, nv1080, nv1080Select, nv1080ti, nv1080tiSelect, nv2060, nv2060Select, nv2070, nv2070Select, nv2080, nv2080Select, nv2080ti, nv2080tiSelect, nv3060, nv3060Select, nv3060ti, nv3060tiSelect, nv3070, nv3070Select, nv3080, nv3080Select, nv3090, nv3090Select, } = this.state;
@@ -66,7 +66,7 @@ class MinerForm extends React.Component {
               <div className="gpu-input-container">
                 <input type="text" name="nv1050" id="nv1050" value={nv1050} onChange={this.handleChange} className="gpu-input" />
                 <div className="gpu-input-btn">
-                  <input type="checkbox" name="nv1050Select" id="nv-1050-btn" value={nv1050Select} onChange={this.handleToggle} hidden="hidden" className="dynamic" data-name="1050" />
+                  <input type="checkbox" name="nv1050Select" id="nv-1050-btn" value={nv1050Select} onChange={this.handleChange} hidden="hidden" className="dynamic" data-name="1050" />
                   <span className="gpu-btn" data-toggle="popover" name="nv1050Select" data-content="Adds hashrate and power consumption for 'n' 1050's <br><br> Calculations based on using +150/+500 and TDP 75%" data-placement="top" data-trigger="hover" data-html="true">
                     1050
                   </span>
